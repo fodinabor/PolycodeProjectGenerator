@@ -209,7 +209,7 @@ void PolycodeProjectGenerator::generateVS12(){
 				modulesIncH = "#include \"Physics2D.h\"\n";
 			}
 			if (physics3D->isChecked()){
-				modulesInc += "Modules\Dependencies\include\bullet;";
+				modulesInc += "Modules/Dependencies/include/bullet;";
 				modulesLibs += "Polycode3DPhysics.lib;BulletDynamics.lib;BulletCollision.lib;LinearMath.lib;";
 				modulesLibsD += "Polycode3DPhysics_d.lib;BulletDynamics_d.lib;BulletCollision_d.lib;LinearMath_d.lib;";
 				modulesIncH += "#include \"Physics3D.h\"\n";

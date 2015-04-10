@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-IFrameworkCore/Dependencies/include -IFrameworkCore/Dependencies/include/AL -IFrameworkCore/include --ModulesIncDir--
-LDFLAGS=-lrt -ldl -lpthread FrameworkCore/lib/libPolycore.a FrameworkCore/Dependencies/lib/libfreetype.a FrameworkCore/Dependencies/lib/liblibvorbisfile.a FrameworkCore/Dependencies/lib/liblibvorbis.a FrameworkCore/Dependencies/lib/liblibogg.a FrameworkCore/Dependencies/lib/libopenal.so FrameworkCore/Dependencies/lib/libphysfs.a FrameworkCore/Dependencies/lib/libpng15.a FrameworkCore/Dependencies/lib/libz.a -lGL -lGLU -lSDL --Modules-- -lX11
+CFLAGS=-IFramework/Core/Dependencies/include -IFramework/Core/Dependencies/include/AL -IFramework/Core/include -I../../Include --ModulesIncDir--
+LDFLAGS=-lrt -ldl -lpthread --Modules-- Framework/Core/lib/libPolycore.a Framework/Core/Dependencies/lib/libfreetype.a Framework/Core/Dependencies/lib/liblibvorbisfile.a Framework/Core/Dependencies/lib/liblibvorbis.a Framework/Core/Dependencies/lib/liblibogg.a Framework/Core/Dependencies/lib/libopenal.so Framework/Core/Dependencies/lib/libphysfs.a Framework/Core/Dependencies/lib/libpng15.a Framework/Core/Dependencies/lib/libz.a -lGL -lGLU -lSDL -lX11
 
 default:
 	$(CC) $(CFLAGS) main.cpp ../../Source/--ProjectName--.cpp -o --ProjectName-- $(LDFLAGS)
