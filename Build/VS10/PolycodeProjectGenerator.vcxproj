@@ -42,7 +42,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include\freetype2;Framework\Core\Dependencies\include;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -71,7 +71,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

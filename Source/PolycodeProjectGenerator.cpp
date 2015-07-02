@@ -109,7 +109,7 @@ void PolycodeProjectGenerator::generateVS10(){
 	bas.close(appCF);
 	bas.close(appHF);
 
-	String modulesInc, modulesLibD, modulesLibs, modulesLibsD, modulesIncH;
+	String modulesInc, modulesLibD, modulesLibs, modulesLibsD, modulesIncH, extraCopy;
 
 	if (physics2D->isChecked() || physics3D->isChecked() || ui->isChecked()){
 		modulesInc = "Framework/Modules/include;";
@@ -132,6 +132,7 @@ void PolycodeProjectGenerator::generateVS10(){
 			modulesLibs += "PolycodeUI.lib;";
 			modulesLibsD += "PolycodeUI_d.lib;";
 			modulesIncH += "#include \"PolycodeUI.h\"\n";
+			extraCopy = "if not exist \"$(ProjectDir)UIThemes.pak\" copy \"$(PolycodeDir)Modules/Assets/UIThemes.pak\" \"$(ProjectDir)\"\n";
 		}
 	}
 
@@ -144,6 +145,7 @@ void PolycodeProjectGenerator::generateVS10(){
 	vcxproj = vcxproj.replace("--ModulesLibDir--", modulesLibD);
 	vcxproj = vcxproj.replace("--ModulesDebug--", modulesLibsD);
 	vcxproj = vcxproj.replace("--Modules--", modulesLibs);
+	vcxproj = vcxproj.replace("--ExtraCopy--", extraCopy);
 
 	main = main.replace("--ProjectName--", name);
 	appC = appC.replace("--ProjectName--", name);
@@ -195,7 +197,7 @@ void PolycodeProjectGenerator::generateVS12(){
 	bas.close(appCF);
 	bas.close(appHF);
 
-	String modulesInc, modulesLibD, modulesLibs, modulesLibsD, modulesIncH;
+	String modulesInc, modulesLibD, modulesLibs, modulesLibsD, modulesIncH, extraCopy;
 
 	if (physics2D->isChecked() || physics3D->isChecked() || ui->isChecked()){
 		modulesInc = "Framework/Modules/include;";
@@ -219,6 +221,7 @@ void PolycodeProjectGenerator::generateVS12(){
 			modulesLibs += "PolycodeUI.lib;";
 			modulesLibsD += "PolycodeUI_d.lib;";
 			modulesIncH += "#include \"PolycodeUI.h\"\n";
+			extraCopy = "if not exist \"$(ProjectDir)UIThemes.pak\" copy \"$(PolycodeDir)Modules/Assets/UIThemes.pak\" \"$(ProjectDir)\"\n";
 		}
 	}
 
@@ -231,6 +234,7 @@ void PolycodeProjectGenerator::generateVS12(){
 	vcxproj = vcxproj.replace("--ModulesLibDir--", modulesLibD);
 	vcxproj = vcxproj.replace("--ModulesDebug--", modulesLibsD);
 	vcxproj = vcxproj.replace("--Modules--", modulesLibs);
+	vcxproj = vcxproj.replace("--ExtraCopy--", extraCopy);
 
 	main = main.replace("--ProjectName--", name);
 	appC = appC.replace("--ProjectName--", name);
@@ -284,7 +288,7 @@ void PolycodeProjectGenerator::generateMakefile(){
 	bas.close(appCF);
 	bas.close(appHF);
 
-	String modulesInc, modulesLibs, modulesIncH;
+	String modulesInc, modulesLibs, modulesIncH, extraCopy;
 
 	if (physics2D->isChecked() || physics3D->isChecked() || ui->isChecked()){
 		modulesInc = "-IFramework/Modules/include ";
@@ -303,6 +307,7 @@ void PolycodeProjectGenerator::generateMakefile(){
 		if (ui->isChecked()){
 			modulesLibs += " Framework/Modules/lib/libPolycodeUI.a";
 			modulesIncH += "#include \"PolycodeUI.h\"\n";
+			extraCopy = "cp Framework/Modules/Assets/UIThemes.pak .";
 		}
 	}
 
@@ -311,11 +316,13 @@ void PolycodeProjectGenerator::generateMakefile(){
 	make = make.replace("--ProjectName--", name);
 	make = make.replace("--ModulesIncDir--", modulesInc);
 	make = make.replace("--Modules--", modulesLibs);
+	make = make.replace("--ExtraCopy--", extraCopy);
 
 	main = main.replace("--ProjectName--", name);
 	appC = appC.replace("--ProjectName--", name);
 	appH = appH.replace("--ProjectName--", name);
 	appH = appH.replace("--ModulesInc--", modulesIncH);
+
 
 	String path = projPos->getText();
 

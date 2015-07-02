@@ -42,7 +42,7 @@
       <WarningLevel>Level3</WarningLevel>
 	  <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Optimization>Disabled</Optimization>
-	  <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+	  <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -59,6 +59,8 @@
 		) else (
 			if not exist "$(TargetDir)OpenAL32.dll" copy "$(PolycodeDir)Core\Dependencies\bin\OpenAL32.dll" "$(TargetDir)"
 		)
+		
+		--ExtraCopy--
 	  </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -69,7 +71,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
 	  <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-	  <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+	  <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -88,6 +90,8 @@
 		) else (
 			if not exist "$(TargetDir)OpenAL32.dll" copy "$(PolycodeDir)Core\Dependencies\bin\OpenAL32.dll" "$(TargetDir)"
 		)
+		
+		--ExtraCopy--
 	  </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

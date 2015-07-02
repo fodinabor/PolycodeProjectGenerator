@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -70,6 +70,8 @@
 		) else (
 			if not exist "$(TargetDir)OpenAL32.dll" copy "$(PolycodeDir)Core\Dependencies\bin\OpenAL32.dll" "$(TargetDir)"
 		)
+		
+		--ExtraCopy--
 	  </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -83,7 +85,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;--ModulesIncDir--%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -103,6 +105,8 @@
 		) else (
 			if not exist "$(TargetDir)OpenAL32.dll" copy "$(PolycodeDir)Core\Dependencies\bin\OpenAL32.dll" "$(TargetDir)"
 		)
+		
+		--ExtraCopy--
 	  </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

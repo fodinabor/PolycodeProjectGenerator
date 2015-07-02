@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,7 +84,7 @@ xcopy "$(ProjectDir)..\..\Projects" "$(TargetDir)Projects" /E  /C /Y</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Include;Framework\Core\Dependencies\include\AL;Framework\Core\Dependencies\include;Framework\Core\Dependencies\include\freetype2;Framework\Core\include;Framework/Modules/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
