@@ -29,14 +29,14 @@ PolycodeProjectGenerator::PolycodeProjectGenerator(PolycodeView *view) {
 	vs12Proj = new UICheckBox("Visual Studio 2013", false);
 	vs12Proj->setPosition(10, 48);
 	scene->addEntity(vs12Proj);
-	xcodeProj = new UICheckBox("Xcode", false);
-	xcodeProj->setPosition(10, 66);
-	scene->addEntity(xcodeProj);
+	//xcodeProj = new UICheckBox("Xcode", false);
+	//xcodeProj->setPosition(10, 66);
+	//scene->addEntity(xcodeProj);
 	makefileProj = new UICheckBox("Makefile", false);
 	makefileProj->setPosition(10, 84);
 	scene->addEntity(makefileProj);
-	cmakeProj = new UICheckBox("CMake", false);
-	cmakeProj->setPosition(10, 102);
+	//cmakeProj = new UICheckBox("CMake", false);
+	//cmakeProj->setPosition(10, 102);
 	//scene->addEntity(cmakeProj);
 
 	projNameLabel = new UILabel("Name your project:", 16);
