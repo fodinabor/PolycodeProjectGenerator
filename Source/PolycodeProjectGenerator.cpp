@@ -31,8 +31,7 @@ PolycodeProjectGenerator::PolycodeProjectGenerator(PolycodeView *view) {
 	scene->addEntity(vs12Proj);
 	//xcodeProj = new UICheckBox("Xcode", false);
 	//xcodeProj->setPosition(10, 66);
-	//scene->addEntity(xcodeProj);
-	makefileProj = new UICheckBox("Makefile", false);
+	//scene->addEntity(xcodeProj);	makefileProj = new UICheckBox("Makefile", false);
 	makefileProj->setPosition(10, 84);
 	scene->addEntity(makefileProj);
 	//cmakeProj = new UICheckBox("CMake", false);
@@ -53,12 +52,17 @@ PolycodeProjectGenerator::PolycodeProjectGenerator(PolycodeView *view) {
 	projPos->setPosition(10, 200);
 	scene->addEntity(projPos);
 
+	browseButton = new UIButton("Browse", 60);
+	browseButton->setPosition(420, 200);
+	scene->addEntity(browseButton);
+	browseButton->addEventListener(this, UIEvent::CLICK_EVENT);
+
 	moduleLabel = new UILabel("Choose the modules you want to use:", 16);
-	moduleLabel->setPosition(10, 230);
+	moduleLabel->setPosition(10, 250);
 	scene->addEntity(moduleLabel);
 	physics2D = new UICheckBox("2D Physics Module", false);
 	physics2D->setPosition(10, 250);
-	scene->addEntity(physics2D);
+	//scene->addEntity(physics2D);
 	physics3D = new UICheckBox("3D Physics Module", false);
 	physics3D->setPosition(10, 268);
 	scene->addEntity(physics3D);
@@ -92,6 +96,9 @@ void PolycodeProjectGenerator::handleEvent(Event* e){
 		if (cmakeProj->isChecked())
 			generateCMake();
 	}
+	if (e->getDispatcher() == browseButton) {
+		projPos->setText(core->openFolderPicker());
+	}
 }
 
 void PolycodeProjectGenerator::generateVS10(){
@@ -112,10 +119,10 @@ void PolycodeProjectGenerator::generateVS10(){
 	String modulesInc, modulesLibD, modulesLibs, modulesLibsD, modulesIncH, extraCopy;
 
 	if (physics2D->isChecked() || physics3D->isChecked() || ui->isChecked()){
-		modulesInc = "Framework/Modules/include;";
-		modulesLibD = "Framework/Modules/lib;";
+		modulesInc = "Framework/include;";
+		modulesLibD = "Framework/lib/win32/;";
 		if (physics2D->isChecked() || physics3D->isChecked()){
-			modulesInc += "Framework/Modules/Dependencies/include;";
+			//modulesInc += "Framework/Modules/Dependencies/include;";
 			modulesLibD += "Framework/Modules/Dependencies/lib;";
 			if (physics2D->isChecked()){
 				modulesLibs = "Polycode2DPhysics.lib;Box2D.lib;";
